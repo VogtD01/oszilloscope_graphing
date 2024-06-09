@@ -29,6 +29,7 @@ def analyze_and_plot(file_path):
 
     # Setzen eines höheren Schwellenwerts und einer Mindestdistanz
     threshold_1 = 0.8 * np.max(data['1'])  # 80% des maximalen Werts der ersten Kurve
+
     min_distance = 5000  # Mindestdistanz zwischen Maxima in Datenpunkten
 
     # Finden der Indizes der signifikanten Maxima mit Mindestdistanz
@@ -55,8 +56,8 @@ def analyze_and_plot(file_path):
     if '2' in data.columns:
         data['2'] = pd.to_numeric(data['2'])
         ptp_2 = np.abs(np.max(data['2'])) + np.abs(np.min(data['2']))
-
-        peaks_2, _ = find_peaks(data['2'], height=threshold_1, distance=min_distance)
+        threshold_2 = 0.8 * np.max(data['2'])  # 80% des maximalen Werts der ersten Kurve
+        peaks_2, _ = find_peaks(data['2'], height=threshold_2, distance=min_distance)
         maxima_values_2 = data['x-axis'][peaks_2].to_numpy()
 
         if len(peaks_2) > 1:
