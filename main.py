@@ -117,6 +117,9 @@ def analyze_and_plot(file_path):
                      arrowprops=dict(facecolor='orange', shrink=0.05),
                      horizontalalignment='left', verticalalignment='bottom')
 
+    # Layout anpassen, um sicherzustellen, dass der Text nicht abgeschnitten wird
+    plt.tight_layout()
+
     # Plot speichern
     plot_filename = os.path.splitext(os.path.basename(file_path))[0] + '.png'
     plt.savefig(plot_filename)
