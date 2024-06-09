@@ -1,0 +1,6 @@
+.venv/
+# Ignoriere alle CSV-Dateien
+*.csv
+
+# Ignoriere alle PNG-Dateien
+*.png
