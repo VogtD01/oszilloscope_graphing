@@ -130,5 +130,5 @@ def analyze_and_plot(file_path):
 
 # Durch alle CSV-Dateien im aktuellen Verzeichnis iterieren und analysieren
 for file_name in os.listdir('.'):
-    if file_name.endswith('.csv'):
+    if file_name.endswith('.CSV'):
         analyze_and_plot(file_name)
